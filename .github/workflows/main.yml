@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  flakes:
-    name: Check Nix flakes
+  flake:
+    name: Check Nix flake
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +38,7 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs:
-      - flakes
+      - flake
       - book
     permissions:
       pages: write
