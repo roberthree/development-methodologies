@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "dictionaryDefinitions": [
+    {
+      "name": "nix",
+      "path": "./.cspell/nix.txt",
+      "addWords": true
+    },
+    {
+      "name": "project",
+      "path": "./.cspell/project.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["nix", "python", "project"],
+  "ignoreRegExpList": ["\"[\\w\\.:/]+\""],
+  "ignorePaths": ["/.github/**", "flake.nix", "*.py", "*.toml"]
+}
