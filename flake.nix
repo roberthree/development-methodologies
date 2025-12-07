@@ -22,8 +22,6 @@
           pre-commit-check = git-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
-              black.enable = true;
-
               cspell = {
                 enable = true;
                 args = [
@@ -76,8 +74,9 @@
             self.checks.${system}.pre-commit-check
           ];
 
-          packages = [
-            pkgs.mdbook
+          packages = with pkgs; [
+            mdbook
+            quarto
           ];
 
           shellHook = ''
