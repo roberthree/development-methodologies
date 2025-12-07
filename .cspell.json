@@ -9,7 +9,7 @@
       "addWords": true
     },
     {
-      "name": "nix",
+      "name": "python",
       "path": "./.cspell/python.txt",
       "addWords": true
     },

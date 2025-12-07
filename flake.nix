@@ -34,7 +34,7 @@
               markdownlint = {
                 enable = true;
                 entry = "${pkgs.nodePackages.markdownlint-cli2}/bin/markdownlint-cli2";
-                files = "\\.md$";
+                files = "\\.qmd$";
               };
 
               prettier.enable = true;
@@ -44,8 +44,7 @@
 
         formatter =
           let
-            config = self.checks.${system}.pre-commit-check.config;
-            inherit (config) package configFile;
+            inherit (self.checks.${system}.pre-commit-check.config) package configFile;
             script = ''
               ${package}/bin/pre-commit run --all-files --config ${configFile}
             '';
