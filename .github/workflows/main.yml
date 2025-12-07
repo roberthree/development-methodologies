@@ -20,8 +20,8 @@ jobs:
 
   pages:
     name: Deploy to GitHub Pages
-    needs:
-      - flake
+    # needs:
+    #   - flake
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -32,6 +32,8 @@ jobs:
         run: cd ./quarto/
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+      - name: Test
+        run: find -maxdepth 3
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
