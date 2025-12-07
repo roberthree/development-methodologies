@@ -1,0 +1,12 @@
+name: Setup Nix
+description: "Install Nix with flakes enabled and enable Magic Nix Cache"
+runs:
+  using: "composite"
+  steps:
+    - uses: cachix/install-nix-action@v27
+      with:
+        extra_nix_config: "experimental-features = nix-command flakes"
+    - uses: nix-community/cache-nix-action@v6
+      with:
+        primary-key: nix-${{ runner.os }}-${{ hashFiles('flake.lock') }}
+        paths: /nix/store
