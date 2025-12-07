@@ -1,7 +1,0 @@
-.direnv
-result
-
-.pre-commit-config.yaml
-*.code-workspace
-
-/book/book/
