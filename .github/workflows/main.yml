@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    defaults:
+      run:
+        working-directory: ./quarto/
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -37,7 +40,6 @@ jobs:
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
-          working-directory: ./quarto/
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
